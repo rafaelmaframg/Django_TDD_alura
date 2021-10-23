@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" media="screen" />
-  <title>Busca animal</title>
+  <title>Find your Pet!</title>
 </head>
 <body>
   
 
 <nav class="navbar">
-  <a class="navbar__link" href="#">Busca Animal</a>
+  <a class="navbar__link" href="{% url 'index' %}">Find your Pet!</a>
 </nav>
-
+<img id="banner" src="{% static 'pet.png' %}">
 <section class="search-section">
-    <h1 class="title">Pesquise um animal e descubra <span class="title__detail">4 coisas</span> sobre ele</h1>
+    <h1 class="title">look for your next pet and get <span class="title__detail">4 Details</span> About!</h1>
 
     <form class="form">
-      <input class="form__input" type="text" class="form-control" id="buscar-animal" name="buscar" placeholder="Exemplo: leão, urso..." aria-label="Buscar animal"/>
-        
-      <button type="submit" class="button">Pesquisar</button>
+      <input class="form__input" type="text" class="form-control" id="buscar-animal" name="buscar" placeholder="Ex: Lion..." aria-label="Buscar animal"/>
+      <button type="submit" class="button">Search</button>
+      <button class="button"><a href="cria_animal" >Register a Pet</a></button>
     </form>
 </section>
     {% for caracteristica in caracteristicas%}
@@ -27,7 +27,7 @@
   <ul class="results">
     <li class="result">
       <h3 class="result-description">
-        Nome do animal
+        Animal Name
       </h3>
       <h2 class="result-title">
         {{caracteristica.nome_animal}}
@@ -35,7 +35,7 @@
     </li>
     <li class="result">
       <h2 class="result-description">
-        Predador
+        Predator
       </h2>
       <h3 class="result-description">
         {{caracteristica.predador}}
@@ -43,7 +43,7 @@
     </li>
     <li class="result">
       <h2 class="result-description">
-        Venenoso
+        Poisonous
       </h2>
       <h3 class="result-description">
         {{caracteristica.venenoso}}
@@ -51,7 +51,7 @@
     </li>
     <li class="result">
       <h2 class="result-description">
-        Doméstico
+        Domestic
       </h2>
       <h3 class="result-description">
         {{caracteristica.domestico}}

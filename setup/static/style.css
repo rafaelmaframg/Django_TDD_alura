@@ -112,3 +112,13 @@ body {
 .result-description {
   margin: 1rem;
 }
+
+#banner{
+    padding: 30px;
+    padding-left: 220px;
+    align: center;
+    height: auto;
+    width: auto;
+    max-width: 1200px;
+    max-height: 1200px;
+}

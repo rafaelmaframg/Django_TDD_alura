@@ -1,0 +1,46 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Animal!</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" media="screen" />
+</head>
+<body>
+<nav class="navbar">
+  <a class="navbar__link" href="{% url 'index' %}">Find your Pet!</a>
+</nav>
+<section class="search-section">
+    <h1 class="title">Register Animal <span class="title__detail">and x'4 details </span> sobre ele</h1>
+    <form action="{% url 'cria_animal' %}" method="post" enctype="multipart/form-data">
+                     {% csrf_token %}
+                       <div class="row">
+                           <table>
+                               <tr>
+                           <div class="col-12 col-lg-12">
+                               <td align="right"><label for="nome_animal"><b>Animal Name</b></label></td>
+                               <td align="left"><input type="text" id="nome_animal" class="form-control" name="nome_animal" placeholder="Ex. Lion" required></td>
+                           </div></tr>
+                          <tr> <div class="col-12 col-lg-12">
+                              <td><label id="predador"><b>Predator</b></label></td>
+                              <td><input type="text" class="form-control" name="predador" cols="30"  placeholder="Ex. Yes/No" required></td>
+                           </div></tr>
+                           <tr>
+                           <div class="col-12 col-lg-12">
+                               <td><label id="venenoso"><b>Poisonous</b></label></td>
+                              <td> <input type="text" class="form-control" name="venenoso" cols="30" rows="10" placeholder="Ex. Yes/No" required></td>
+                           </div></tr>
+                               <tr>
+                           <div class="col-12 col-lg-12">
+                               <td><label id="domestico"><b>Domestic</b></label></td>
+                               <td><input type="text" class="form-control" name="domestico" placeholder="Ex. Yes/No" required></td>
+                           </div></tr>
+                               <tr>
+                           <div class="col-12 text-center">
+                              <td> <button class="btn delicious-btn mt-30" type="submit">Register Animal</button></td>
+                           </div></tr>
+
+                    </table>
+                   </form>
+</section>
+</body>
+</html>
