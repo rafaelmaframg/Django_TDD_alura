@@ -19,7 +19,7 @@
     <form class="form">
       <input class="form__input" type="text" class="form-control" id="buscar-animal" name="buscar" placeholder="Ex: Lion..." aria-label="Buscar animal"/>
       <button type="submit" class="button">Search</button>
-      <button class="button"><a href="cria_animal" >Register a Pet</a></button>
+      <a href="{% url 'cria_animal' %}"><button class="button" >Register a Pet</a></button>
     </form>
 </section>
     {% for caracteristica in caracteristicas%}
